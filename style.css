@@ -1,0 +1,530 @@
+/*
+COLORS
+blue: #2E2E92
+light pink: #FFA0CA
+turquoise: #27F7AB
+FONTS
+LIVVIC weight: thin 100, semibold 700, black 900
+ENCODEE SANS weight: thin 100, medium 500
+*/
+
+html, body {
+    background-color: #2E2E92;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 2000px;
+    min-width: 300px;
+    align-content: center;
+}
+
+
+/* NAVIGATION BAR */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0));
+    display: flex;
+    align-items: center;
+    max-width: 2000px;
+    z-index: 10;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    font-style: normal;
+}
+.home, li a {
+    color: white;
+    text-decoration: none;
+    padding: 30px 40px;
+}
+.home {
+    font-size: 25px;
+}
+ul li a:hover {
+    background-color: #27F7AB;
+    color: #2E2E92;
+}
+.home:hover {
+    color: #27F7AB;
+}
+ul {
+    list-style: none;
+    margin-left: auto;
+    display: flex;
+}
+.hamburger {
+    display: none;
+    font-size: 40px;
+    color: white;
+    margin-left: auto;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.hamburger.active {
+    content: "✕";
+}
+/* NAV IN MOBILE */
+@media (max-width: 700px){
+    .hamburger {
+        display: block;
+    }
+    ul{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100svh;
+        background: #27F7AB;
+        position: absolute;
+        top: 70px;
+        text-align: center;
+        align-content: center;
+        font-size: 25px;
+        padding-top: 80px;
+    }
+    .home {
+        font-size: 30px;
+    }
+    ul.show {
+        display: flex;
+    }
+    li {
+        margin: 10px;
+    }
+    li a {
+        color:#2E2E92;
+        text-decoration: none;
+        padding: 0;
+    }
+    ul li a:hover {
+        background-color: transparent;
+        color: #FFA0CA;
+    }
+    .hamburger:hover {
+        color: #27F7AB;
+    }
+    .home:hover {
+        color: #27F7AB;
+    }
+}
+
+
+
+/* HEADER IMG 
+.header{
+    min-height: 100svh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("varriovisuals.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    margin: 0;  
+}
+*/
+
+/* HEADER VID */
+.hero {
+    position: relative;
+    display: flex;
+    height: 100svh;
+    width: 100%;
+    overflow: hidden;
+}
+.hero-video {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0));
+    z-index: 1;
+}
+
+/* ARROW N SCROLL */
+#scroll-down {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 1.5s infinite;
+    transition: bottom 0.4s ease, opacity 0.4s ease;
+}
+/* ARROW */
+#scroll-down::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-left: 5px solid rgba(39, 247, 171, 0.5);
+    border-bottom: 5px solid rgba(39, 247, 171, 0.5);
+    transform: rotate(-45deg);
+    margin: 50px;
+}
+/* BOUNCE ANIMATION */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+    }
+    40% {
+        transform: translate(-50%, 8px);
+    }
+    60% {
+        transform: translate(-50%, 4px);
+    }
+}
+
+/* HEADER IN MOBILE - vai onko parempi että on full screen ???
+@media (max-width: 1200px) {
+    .hero-video {
+    height: 85%;
+    }
+} 
+@media (max-width: 700px) {
+    .hero-video {
+    height: 70%;
+    }
+}
+*/
+
+
+/* CONTENT */
+.content {
+    width: 50%;
+    max-width: 1080px;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-size: 20px;
+    text-align: center;
+    align-content: center;
+    color: #FFA0CA;
+}
+.content h1 {
+    font-size: 40px;
+    color: FFA0CA;
+    font-family: 'Livvic', sans-serif;
+    font-weight: 700;
+}
+.content h2 {
+    font-size: 20px;
+    color: FFA0CA;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    word-spacing: 100%;
+    padding: 10px;
+}
+.content p {
+    font-size: 16px;
+    color: white;
+    padding: 30px;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    padding: 2px;
+    margin: 0;
+}
+.content img {
+    max-width: 80%;
+} 
+/* CONTENT IN MOBILE */
+@media screen and (max-width: 1200px) {
+    .content {
+        width: 70%;
+    }
+    .content img{
+      min-width: 80%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .content {
+        width: 80%;
+    }
+    .content img{
+      min-width: 100%;
+    }
+}
+
+/* MIE */
+/*
+.content-mie {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.about-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.icons {
+    
+}
+*/
+
+/* PORTFOLIO */
+.project {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    gap: 20px;
+}
+.project video, .project img {
+     width: 100%;
+     height: auto;
+     object-fit: contain;
+     display: block;
+     transition: transform 0.5s ease;
+}
+.project::after {
+    content:"";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.6));
+    transition: opacity 0.5s ease;
+}
+.project-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    transition: all 0.5s ease;
+    color:#ffffff;
+    font-family: 'Encode Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* DESKARISSA */
+@media (hover: hover) and (pointer: fine) {
+.project:hover video, .project:hover img {
+    transform: scale(1.05)
+}
+}
+.project:hover .project-info {
+    transform: translateY(0);
+    opacity: 0;
+}
+.project:hover .play-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+.project:hover::after {
+    opacity: 0;
+}
+
+/* MOBIILISSA */
+.project.active video, .project.active img {
+    transform: scale(1.05);
+}
+.project.active .play-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+.project.active .project-info {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.project.active::after {
+    opacity: 0;
+}
+
+
+/* PLAY-ICON FOR VIDEOS */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color:#ffffff;
+    z-index: 3;
+    opacity: 0.5;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0%{ transform:translate(-50%, -50%) scale(1); }
+    50%{ transform:translate(-50%, -50%) scale(1.1); }
+    100%{ transform:translate(-50%, -50%) scale(1); }
+}
+
+
+/* COLUMNS */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.column {
+    flex: 25%;
+    max-width: 25%;
+}
+.column img, video {
+    vertical-align: middle;
+    width: 100%;
+} 
+
+/* RESPONSIVE COLUMNS */
+@media screen and (max-width: 1300px) {
+    .project-info {
+         font-size: 12px;
+    }
+} 
+@media screen and (max-width: 1000px) {
+    .column {
+         flex: 50%;
+         max-width: 50%;
+    }
+    .row {
+        flex: none;
+    }
+    .project-info {
+        font-size: 15px;
+   }
+}
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }  
+}
+
+
+/* CONTACT FORM */
+.contact-container {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.contact-left-title h2 {
+    margin-bottom: 20px;
+}
+.contact-left-title hr {
+    border: none;
+    width: 200px;
+    height: 5px;
+    background-color:#27F7AB;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color:#2E2E92;
+    border-radius: 50px;
+}
+.contact-left textarea {
+    width: 400px;
+    height: 140px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color:#2E2E92;
+}
+.contact-inputs:focus {
+    border: 2px solid #27F7AB;
+}
+.contact-inputs::placeholder {
+    color:rgb(128, 128, 128);
+}
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background: #FFA0CA;
+    cursor: pointer;
+    border: none; 
+
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color:#2E2E92;
+    border-radius: 50px; 
+}
+/* ADD ARROW ICON 
+.contact-left button img {
+    height: 15px;
+}
+*/
+.contact-left button:hover {
+    transform: scale(1.1);
+}
+/* MOBIILISSA */
+@media (max-width: 500px) {
+    .contact-inputs {
+        width: 80vw;
+    }
+}
+
+
+
+/* FOOTER */
+.footer {
+    background-color: #27F7AB;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 2000px;
+}
+.footer h1 {
+    padding: 30px 50px;
+    padding-bottom: 0px;
+    font-size: 25px;
+    color: #2E2E92;
+    font-family: "Livvic", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+.footer p {
+    padding: 30px 50px;
+    padding-top: 0px;
+    margin: 0;
+    font-size: 18px;
+    color: #2E2E92;
+    font-family: 'Livvic', sans-serif;
+    font-size: 20px;
+    text-align: left;
+}
