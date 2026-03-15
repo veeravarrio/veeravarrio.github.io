@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     max-width: 2000px;
     align-content: center;
+    min-width: 300px;
 }
 
 /* NAVIGATION BAR */
@@ -153,25 +154,13 @@ ul {
     }
 }
 
-/* HEADER IN MOBILE - vai onko parempi että on full screen ???
-@media (max-width: 1200px) {
-    .hero-video {
-    height: 85%;
-    }
-} 
-@media (max-width: 700px) {
-    .hero-video {
-    height: 70%;
-    }
-}
-*/
-
 
 .page-wrapper {
    display: flex;
    flex-direction: column;
    min-height: 100vh; 
 }
+
 
 /* CONTENT */
 .content {
@@ -188,17 +177,18 @@ ul {
 }
 .content h1 {
     font-size: 40px;
-    color: FFA0CA;
+    color: #FFA0CA;
     font-family: 'Livvic', sans-serif;
     font-weight: 700;
 }
 .content h2 {
     font-size: 20px;
-    color: FFA0CA;
+    color: #FFA0CA;
     font-family: 'Encode Sans', sans-serif;
     font-weight: 100;
     font-style: normal;
-    word-spacing: 100%;
+
+    word-spacing: 50px;
     padding: 10px;
 }
 .content p {
@@ -227,35 +217,36 @@ ul {
     .content {
         width: 80%;
     }
+    .content h1 {
+        font-size: 30px;
+    }
+    .content h2 {
+        font-size: 18px;
+        word-spacing: 30px;
+    }
+    .content p {
+        font-size: 14px
+    }
+    .content img{
+      min-width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .content {
+        width: 90%;
+    }
+    .content h2 {
+        font-size: 16px;
+        word-spacing: 15px;
+    }
+    .content p {
+        font-size: 12px
+    }
     .content img{
       min-width: 100%;
     }
 }
 
-/* MIE */
-/*
-.content-mie {
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.about-left {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-}
-.about-right {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-}
-.icons {
-    
-}
-*/
 
 /* PORTFOLIO */
 .project {
@@ -296,7 +287,7 @@ ul {
 @media (hover: hover) and (pointer: fine) {
 .project:hover video, .project:hover img {
     transform: scale(1.05)
-}
+    }
 }
 .project:hover .project-info {
     transform: translateY(0);
@@ -394,6 +385,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    align-items: flex-start;
 }
 .contact-left {
     display: flex;
@@ -486,7 +478,7 @@ ul {
     justify-content: space-between;
     background-color: #27F7AB;
     align-items: flex-end;
-        min-width: 300px;
+    min-width: 300px;
 }
 .footer-contact {
     display: flex;
